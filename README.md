@@ -49,11 +49,11 @@ RBAC is automatically enabled in Kubernetes cluster on GCP.
 
 ### Rolebinding
 
-- ClusterRoleBinding:
+- ClusterRoleBinding: Grants a ClusterRole across the entire cluster, including all namespaces
 
-  - `cluster-admin` -
+  - `cluster-admin` - When used in a ClusterRoleBinding, it gives super-user access over every resource in the cluster and in all namespaces. When used in a RoleBinding, it gives super-user access over every resource in the rolebinding's namespace, including the namespace itself.
 
-- RoleBinding:
+- RoleBinding: Grants a Role or ClusterRole within a specific namespace
 
   - `admin` - Allows admin/read/write access to most resources in a namespace, including the ability to create roles and rolebindings within the namespace. It does not allow write access to resource quota or to the namespace itself.
 
