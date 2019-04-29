@@ -45,7 +45,7 @@ Figure below maps the relationship between Helm and Tiller and its counterpart i
 
 <img src="./images/docker_v_helm.png" alt="Docker versus Helm" />
 
---
+---
 
 ## Role Based Access Control
 
@@ -151,6 +151,21 @@ on a new browser window. This will open up Jupyter Lab's authentication page.
 The default password is `dask`. This will take you to Jupyter Lab workspace.
 
 <img src="./images/jupyterlab-dashboard.png" alt="Jupyter Lab Dashboard" />
+
+---
+
+## PersistentVolume
+
+```yaml
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: jupyterhub-user-ssd
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+  zones: us-central1-a
+```
 
 ---
 
